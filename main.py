@@ -1,7 +1,7 @@
 from sensor.configuration.mongo_db_connection import MongoDBClient
 from sensor.exception import SensorException
 import os,sys
-from sensor.logger import logging
+from sensor.logger import logging    
 from sensor.pipeline import training_pipeline
 from sensor.pipeline.training_pipeline import TrainPipeline
 import os
@@ -88,7 +88,15 @@ async def predict_route(request,file: UploadFile = File(...)):
 #         logging.exception(e)
 
 
+# if __name__=="__main__":
+#     # main()
+#     set_env_variable(env_file_path)
+#     app_run(app, port=APP_PORT)
+    
+# if __name__ == "__main__":
+#     app.run(host="127.0.0.1", port=8081)
+    
 if __name__=="__main__":
-    # main()
+    #main()
     set_env_variable(env_file_path)
-    app_run(app, port=APP_PORT)
+    app_run(app, host=APP_HOST, port=APP_PORT)
